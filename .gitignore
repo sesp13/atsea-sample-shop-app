@@ -64,3 +64,5 @@ Thumbs.db
 # Secrets folders #
 ###################
 prodsecrets
+
+ignore
