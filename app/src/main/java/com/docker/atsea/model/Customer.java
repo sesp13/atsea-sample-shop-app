@@ -26,7 +26,7 @@ public class Customer implements Serializable {
     @Column(name = "name", length = 255, nullable = false)
     private String name;
 	
-	@NotEmpty
+	@NotEmpt
 	@Column(name = "address", length = 512, nullable = false)
 	
 	private String address;
