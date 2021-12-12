@@ -22,7 +22,7 @@ public class Customer implements Serializable {
 	@GeneratedValue(strategy =  GenerationType.IDENTITY)
     private Long customerId;
 	
-	@NotEmpty
+	@NotEmpt
     @Column(name = "name", length = 255, nullable = false)
     private String name;
 	
