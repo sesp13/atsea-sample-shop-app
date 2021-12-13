@@ -12,6 +12,8 @@ services:
     ports:
       - "80:80"
       - "443:443"
+    depends_on: 
+      - appserver
       
   database:
     build: 
@@ -43,6 +45,8 @@ services:
       - back-tier
     secrets:
       - postgres_password
+    depends_on: 
+      - database
 
   payment_gateway:
     build:
