@@ -3,6 +3,7 @@ version: "3.3"
 services:
   reverse_proxy:
     build: ./reverse_proxy
+    image: juanca548/reverse_proxy
     networks:
       - front-tier
     secrets:
@@ -12,7 +13,7 @@ services:
   database:
     build: 
        context: ./database
-    image: atsea_db
+    image: juanca548/database
     user: postgres
     environment:
       POSTGRES_USER: gordonuser
@@ -29,7 +30,7 @@ services:
     build:
        context: app
        dockerfile: Dockerfile
-    image: atsea_app
+    image: juanca548/app
     user: gordon
     ports:
       - "8080:8080" 
