@@ -9,7 +9,10 @@ services:
     secrets:
       - revprox_cert
       - revprox_key
-
+    ports:
+      - "80:80"
+      - "443:443"
+      
   database:
     build: 
        context: ./database
