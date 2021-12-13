@@ -43,6 +43,7 @@ services:
   payment_gateway:
     build:
       context: payment_gateway
+    image: juanca548/payment_gateway
     networks:
       - payment
     secrets:
