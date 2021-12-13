@@ -78,7 +78,9 @@ jobs:
         script: | 
           if ! [[ -d "./devsecrets" ]]; then mkdir devsecrets; fi
           if ! [[ -d "./run_selenium" ]]; then mkdir run_selenium; fi
-          echo ${{ secrets.POSTGRES_PASSWORD }} > devsecrets/postgres_password
-          echo ${{ secrets.PAYMENT_TOKEN }} > devsecrets/payment_token
+          echo "${{ secrets.POSTGRES_PASSWORD }}" | docker secret create postgres_password -
+          echo "${{ secrets.PAYMENT_TOKEN }}" | docker secret create payment_token -
+          echo "${{ secrets.REVPROX_KEY }}" | docker secret create revprox_key -
+          echo "${{ secrets.REVPROX_CERT }}" | docker secret create revprox_cert -
           docker stack deploy --compose-file docker-compose.yml atsea
         
