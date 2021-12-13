@@ -76,6 +76,7 @@ jobs:
         key: ${{ secrets.INSTANCE_PRIVATE_KEY }}
         timeout: 60s
         script: | 
+          docker swarm init
           if ! [[ -d "./devsecrets" ]]; then mkdir devsecrets; fi
           if ! [[ -d "./certs" ]]; then mkdir certs; fi
           if ! [[ -d "./run_selenium" ]]; then mkdir run_selenium; fi
