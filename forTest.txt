@@ -1,4 +1,4 @@
 This will be used to invoke github actions
 with a new pr branch
 Now using ci-cd yml second try
-Working with swarm error
+Error couldnt connect to ec2 instance
