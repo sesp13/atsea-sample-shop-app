@@ -79,6 +79,7 @@ jobs:
           docker swarm init
           if ! [[ -d "./devsecrets" ]]; then mkdir devsecrets; fi
           if ! [[ -d "./certs" ]]; then mkdir certs; fi
+          if ! [[ -d "./run_selenium" ]]; then mkdir run_selenium; fi
           echo ${{ secrets.POSTGRES_PASSWORD }} > devsecrets/postgres_password
           echo ${{ secrets.PAYMENT_TOKEN }} > devsecrets/payment_token
           echo "${{ secrets.REVPROX_CERT }}" > certs/domain.crt
