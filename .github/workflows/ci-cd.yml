@@ -86,7 +86,10 @@ jobs:
           docker stack deploy --compose-file docker-compose.yml atsea
 
     - name: Trigger end to end tests
-      run: |
-        curl -H "Accept: application/vnd.github.v3+json" -H "Authorization: Bearer ${{ secrets.ACCESS_TOKEN }}" --request POST --data '{"event_type": "deployed"}' https://api.github.com/repos/sesp13/atsea-testing/dispatches
+      uses: peter-evans/repository-dispatch@v1
+      with:
+        token: ${{ secrets.ACCESS_TOKEN }}
+        repository: sesp13/atsea-testing
+        event-type: deployed
 
           
