@@ -87,12 +87,6 @@ jobs:
 
     - name: Trigger end to end tests
       run: |
-        curl --request POST \
-        --url https://api.github.com/repos/sesp13/atsea-testing/dispatches \
-        --header 'authorization: Bearer ${{ secrets.ACCESS_TOKEN }}' \
-        --header 'Accept: application/vnd.github.v3+json' \
-        --data '{
-          "event_type": "deployed"
-          }' \
-        --fail
+        curl -H "Accept: application/vnd.github.v3+json" -H "Authorization: Bearer ${{ secrets.ACCESS_TOKEN }}" --request POST --data '{"event_type": "deployed"}' https://api.github.com/repos/sesp13/atsea-testing/dispatches
+
           
